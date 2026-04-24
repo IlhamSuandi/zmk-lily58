@@ -46,15 +46,6 @@
         };
     };
 
-    macros {
-        warpd: warpd {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LG(X)) &to 4>;
-            label = "WARPD";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
