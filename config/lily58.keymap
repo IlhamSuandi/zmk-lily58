@@ -80,7 +80,7 @@
 &sk LA(TAB)  &kp EXCLAMATION  &kp AT_SIGN  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp KP_SUBTRACT                                &kp KP_PLUS   &kp N7  &kp N8  &kp N9  &kp PIPE   &kp LBKT
 &kp ESCAPE   &kp HASH         &kp DOLLAR   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE                                 &kp MINUS     &kp N4  &kp N5  &kp N6  &kp TILDE  &kp GRAVE
 &kp ESCAPE   &kp PERCENT      &kp CARET    &kp LBKT              &kp RBKT               &kp AMPERSAND    &kp C_VOL_DN    &kp C_VOL_UP  &kp ASTERISK  &kp N1  &kp N2  &kp N3  &kp N0     &kp PIPE
-                                           &trans                &trans                 &layer_1_3       &trans          &kp BSPC      &layer_2_4    &trans  &trans
+                                           &trans                &trans                 &trans           &trans          &kp BSPC      &trans        &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -95,11 +95,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans  &trans            &trans            &trans            &trans                        &trans      &trans            &trans            &trans            &trans  &trans
-&trans  &trans  &kp LG(N7)        &kp LG(N8)        &kp LG(N9)        &trans                        &trans      &kp LC(N7)        &kp LC(N8)        &kp LC(N9)        &trans  &trans
-&trans  &trans  &kp LG(NUMBER_4)  &kp LG(N5)        &kp LG(NUMBER_6)  &trans                        &trans      &kp LC(NUMBER_4)  &kp LC(N5)        &kp LC(NUMBER_6)  &trans  &trans
-&trans  &trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans      &trans    &trans  &trans      &kp LC(NUMBER_1)  &kp LC(NUMBER_2)  &kp LC(NUMBER_3)  &trans  &trans
-                                  &trans            &trans            &layer_1_3  &trans    &trans  &layer_2_4  &trans            &trans
+&trans  &trans  &trans            &trans            &trans            &trans                    &trans  &trans            &trans            &trans            &trans  &trans
+&trans  &trans  &kp LG(N7)        &kp LG(N8)        &kp LG(N9)        &trans                    &trans  &kp LC(N7)        &kp LC(N8)        &kp LC(N9)        &trans  &trans
+&trans  &trans  &kp LG(NUMBER_4)  &kp LG(N5)        &kp LG(NUMBER_6)  &trans                    &trans  &kp LC(NUMBER_4)  &kp LC(N5)        &kp LC(NUMBER_6)  &trans  &trans
+&trans  &trans  &kp LG(NUMBER_1)  &kp LG(NUMBER_2)  &kp LG(NUMBER_3)  &trans  &trans    &trans  &trans  &kp LC(NUMBER_1)  &kp LC(NUMBER_2)  &kp LC(NUMBER_3)  &trans  &trans
+                                  &trans            &trans            &trans  &trans    &trans  &trans  &trans            &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -107,21 +107,21 @@
 
         warpd_activation {
             bindings = <
-&trans  &trans  &trans  &trans  &trans         &trans                               &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans         &trans                               &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &kp LA(LG(X))  &trans                               &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans         &trans      &trans    &trans         &trans      &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans         &layer_1_3  &trans    &kp LA(LG(C))  &layer_2_4  &trans  &trans
+&trans  &trans  &trans  &trans  &trans         &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans         &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp LA(LG(X))  &trans                           &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans         &trans  &trans    &trans         &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans         &trans  &trans    &kp LA(LG(C))  &trans  &trans  &trans
             >;
         };
 
         original_layer {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                                &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                                &trans      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp ESCAPE    &kp ESCAPE  &trans      &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &layer_1_3  &trans        &trans      &layer_2_4  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &kp ESCAPE    &kp ESCAPE  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans        &trans      &trans  &trans  &trans
             >;
         };
     };
