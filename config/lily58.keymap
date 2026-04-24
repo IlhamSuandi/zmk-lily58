@@ -58,11 +58,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC     &kp N1                &kp N2            &kp N3             &kp N4              &kp N5                                   &kp N6      &kp N7    &kp N8                     &kp N9            &kp N0                    &kp GRAVE
-&kp TAB     &kp Q                 &kp W             &kp E              &kp R               &kp T                                    &kp Y       &kp U     &kp I                      &kp O             &kp P                     &kp MINUS
-&kp LSHIFT  &home_row LEFT_WIN A  &home_row LALT S  &home_row LCTRL D  &home_row LSHIFT F  &kp G                                    &kp H       &kp J     &home_row RIGHT_CONTROL K  &home_row RALT L  &home_row RIGHT_WIN SEMI  &kp SQT
-&kp LCTRL   &kp Z                 &kp X             &kp C              &kp V               &kp B       &kp ESCAPE    &kp BACKSPACE  &kp N       &kp M     &kp COMMA                  &kp DOT           &kp FSLH                  &kp RSHFT
-                                                    &kp LEFT           &kp UP_ARROW        &layer_1_3  &kp SPACE     &kp ENTER      &layer_2_4  &kp DOWN  &kp RIGHT
+&kp ESC     &kp N1                &kp N2            &kp N3             &kp N4              &kp N5                                   &kp N6      &kp N7                   &kp N8                     &kp N9            &kp N0                    &kp GRAVE
+&kp TAB     &kp Q                 &kp W             &kp E              &kp R               &kp T                                    &kp Y       &kp U                    &kp I                      &kp O             &kp P                     &kp MINUS
+&kp LSHIFT  &home_row LEFT_WIN A  &home_row LALT S  &home_row LCTRL D  &home_row LSHIFT F  &kp G                                    &kp H       &home_row RIGHT_SHIFT J  &home_row RIGHT_CONTROL K  &home_row RALT L  &home_row RIGHT_WIN SEMI  &kp SQT
+&kp LCTRL   &kp Z                 &kp X             &kp C              &kp V               &kp B       &kp ESCAPE    &kp BACKSPACE  &kp N       &kp M                    &kp COMMA                  &kp DOT           &kp FSLH                  &kp RSHFT
+                                                    &kp LEFT           &kp UP_ARROW        &layer_1_3  &kp SPACE     &kp ENTER      &layer_2_4  &kp DOWN                 &kp RIGHT
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
