@@ -56,18 +56,12 @@
     };
 
     macros {
-        cmd_tab: cmd_tab {
+        warpd_activation: warpd_activation {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LEFT_COMMAND>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LGUI>;
+            bindings = <&macro_press>, <&kp LA(LG(X)) &to 4>;
 
-            label = "CMD_TAB";
+            label = "WARPD_ACTIVATION";
         };
     };
 
@@ -147,7 +141,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                            &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &kp ESCAPE    &kp ESCAPE  &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans  &trans        &trans      &trans  &trans  &trans
+                        &trans  &trans  &to 0   &trans        &trans      &trans  &trans  &trans
             >;
         };
     };
