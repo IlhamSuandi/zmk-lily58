@@ -52,7 +52,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
-            bindings = <&kp TAB>, <&kp LEFT_COMMAND>;
+            bindings = <&kp TAB>, <&kp LGUI>;
         };
     };
 
