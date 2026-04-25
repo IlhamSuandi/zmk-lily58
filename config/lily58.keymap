@@ -49,7 +49,7 @@
     };
 
     macros {
-        warpd_f: warpd_activation {
+        warpd_x: warpd_activation {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_press>, <&kp LA(LG(X)) &to 4>;
@@ -64,10 +64,10 @@
             label = "TO_DEFAULT";
         };
 
-        warpd_x: warpd_x {
+        warpd_c: warpd_x {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LG(X)) &to 4>;
+            bindings = <&kp LA(LG(C)) &to 4>;
             label = "WARPD_X";
         };
     };
@@ -96,7 +96,7 @@
 &kp ESC     &kp N1                &kp N2            &kp N3             &kp N4              &kp N5                              &kp N6      &kp N7                   &kp N8                     &kp N9            &kp N0                    &kp GRAVE
 &kp TAB     &kp Q                 &kp W             &kp E              &kp R               &kp T                               &kp Y       &kp U                    &kp I                      &kp O             &kp P                     &kp MINUS
 &kp LSHIFT  &home_row LEFT_WIN A  &home_row LALT S  &home_row LCTRL D  &home_row LSHIFT F  &kp G                               &kp H       &home_row RIGHT_SHIFT J  &home_row RIGHT_CONTROL K  &home_row RALT L  &home_row RIGHT_WIN SEMI  &kp SQT
-&kp LCTRL   &kp Z                 &kp X             &kp C              &kp V               &kp B       &warpd_f     &warpd_x   &kp N       &kp M                    &kp COMMA                  &kp DOT           &kp FSLH                  &kp RSHFT
+&kp LCTRL   &kp Z                 &kp X             &kp C              &kp V               &kp B       &warpd_x     &warpd_c   &kp N       &kp M                    &kp COMMA                  &kp DOT           &kp FSLH                  &kp RSHFT
                                                     &kp LALT           &kp LGUI            &layer_1_3  &kp SPACE    &kp ENTER  &layer_2_4  &kp BACKSPACE            &kp DEL
             >;
 
@@ -134,7 +134,7 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4                    &kp PRINTSCREEN  &kp SCROLLLOCK  &trans         &trans       &trans  &trans
 &trans      &trans        &kp C_VOLUME_DOWN  &kp K_MUTE        &kp C_VOL_UP  &kp C_BRI_UP                    &trans           &trans          &trans         &trans       &trans  &trans
 &trans      &trans        &kp K_PREV         &kp K_PLAY_PAUSE  &kp C_NEXT    &kp C_BRI_DN                    &kp LEFT         &kp DOWN        &kp UP_ARROW   &kp RIGHT    &trans  &trans
-&trans      &trans        &kp LC(X)          &kp LC(C)         &kp LC(V)     &key_repeat   &trans    &trans  &kp INSERT       &kp C_AC_HOME   &kp PAGE_DOWN  &kp PAGE_UP  &trans  &trans
+&trans      &trans        &kp LC(X)          &kp LC(C)         &kp LC(V)     &trans        &trans    &trans  &kp INSERT       &kp C_AC_HOME   &kp PAGE_DOWN  &kp PAGE_UP  &trans  &trans
                                              &trans            &trans        &trans        &trans    &trans  &trans           &trans          &trans
             >;
 
@@ -147,7 +147,7 @@
 &trans  &trans        &trans        &trans            &trans          &trans                          &trans          &trans          &trans        &trans           &trans  &trans
 &trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans                          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans  &trans
 &trans  &trans        &trans        &trans            &trans          &trans  &mkp LCLK    &mkp RCLK  &trans          &trans          &trans        &trans           &trans  &trans
-                                    &trans            &trans          &trans  &trans       &warpd_f   &trans          &trans          &trans
+                                    &trans            &trans          &trans  &trans       &warpd_c   &trans          &trans          &trans
             >;
         };
 
