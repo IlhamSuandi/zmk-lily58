@@ -39,9 +39,9 @@
             tapping-term-ms = <1000>;
         };
 
-        home_row: home_row {
+        holdtap: holdtap {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW";
+            label = "HOLDTAP";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -49,6 +49,30 @@
             flavor = "tap-preferred";
             quick-tap-ms = <175>;
             hold-trigger-on-release;
+        };
+
+        homerow_left: homerow_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <44 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 44 45 46 47 48 49 54 55 56 57 43>;
+        };
+
+        homerow_right: homerow_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            flavor = "tap-preferred";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53>;
         };
     };
 
@@ -97,11 +121,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC     &kp N1                &kp N2            &kp N3             &kp N4              &kp N5                              &kp N6      &kp N7                   &kp N8                     &kp N9            &kp N0                    &kp BACKSLASH
-&kp TAB     &kp Q                 &kp W             &kp E              &kp R               &kp T                               &kp Y       &kp U                    &kp I                      &kp O             &kp P                     &kp MINUS
-&kp LSHIFT  &home_row LEFT_WIN A  &home_row LALT S  &home_row LCTRL D  &home_row LSHIFT F  &kp G                               &kp H       &home_row RIGHT_SHIFT J  &home_row RIGHT_CONTROL K  &home_row RALT L  &home_row RIGHT_WIN SEMI  &kp SQT
-&kp LCTRL   &kp Z                 &kp X             &kp C              &kp V               &kp B       &warpd_x     &warpd_c   &kp N       &kp M                    &kp COMMA                  &kp DOT           &kp FSLH                  &kp RSHFT
-                                                    &kp LALT           &kp ESCAPE          &layer_1_3  &kp SPACE    &kp ENTER  &layer_2_4  &kp BACKSPACE            &kp DEL
+&kp ESC     &kp N1                    &kp N2                &kp N3                 &kp N4                  &kp N5                              &kp N6      &kp N7                        &kp N8                          &kp N9                 &kp N0                         &kp BACKSLASH
+&kp TAB     &kp Q                     &kp W                 &kp E                  &kp R                   &kp T                               &kp Y       &kp U                         &kp I                           &kp O                  &kp P                          &kp MINUS
+&kp LSHIFT  &homerow_left LEFT_WIN A  &homerow_left LALT S  &homerow_left LCTRL D  &homerow_left LSHIFT F  &kp G                               &kp H       &homerow_right RIGHT_SHIFT J  &homerow_right RIGHT_CONTROL K  &homerow_right RALT L  &homerow_right RIGHT_WIN SEMI  &kp SQT
+&kp LCTRL   &kp Z                     &kp X                 &kp C                  &kp V                   &kp B       &warpd_x     &warpd_c   &kp N       &kp M                         &kp COMMA                       &kp DOT                &kp FSLH                       &kp RSHFT
+                                                            &kp LALT               &kp ESCAPE              &layer_1_3  &kp SPACE    &kp ENTER  &layer_2_4  &kp BACKSPACE                 &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
