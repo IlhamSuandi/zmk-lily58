@@ -98,13 +98,6 @@
             bindings = <&kp LA(LG(C)) &to 4>;
             label = "WARPD_X";
         };
-
-        copy_leave: copy_leave {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp C &to 0>;
-            label = "COPY_LEAVE";
-        };
     };
 
     combos {
