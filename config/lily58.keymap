@@ -80,7 +80,7 @@
         warpd_x: warpd_activation {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press>, <&kp LA(LG(X)) &to 5>;
+            bindings = <&macro_press>, <&kp LA(LG(X)) &to 4>;
 
             label = "WARPD_ACTIVATION";
         };
@@ -95,7 +95,7 @@
         warpd_c: warpd_x {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LG(C)) &to 5>;
+            bindings = <&kp LA(LG(C)) &to 4>;
             label = "WARPD_X";
         };
 
