@@ -17,7 +17,6 @@
 #     artifact-name: corne_left_with_logging
 #
 ---
-zmk-version: v0.3
 include:
   - board: nice_nano_v2
     shield: lily58_left
