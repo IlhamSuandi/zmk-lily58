@@ -216,11 +216,11 @@
 
         revert-default {
             bindings = <
-&kp ESC    &kp N0                             &kp N9                      &kp N8                          &kp N7                        &kp N6                           &kp N5   &kp N4                 &kp N3                        &kp N2                    &kp N1                     &kp ESC
-&kp TAB    &kp P                              &kp O                       &kp I                           &kp U                         &kp Y                            &kp T    &kp R                  &kp E                         &kp W                     &kp Q                      &kp TAB
-&kp LSHFT  &homerow_right LEFT_WIN SEMICOLON  &homerow_right RIGHT_ALT L  &homerow_right RIGHT_CONTROL K  &homerow_right RIGHT_SHIFT J  &kp H                            &kp G    &homerow_left LSHFT F  &homerow_left LEFT_CONTROL D  &homerow_left LEFT_ALT S  &homerow_left RIGHT_WIN A  &kp LSHFT
-&kp LCTRL  &kp FSLH                           &kp DOT                     &kp COMMA                       &kp M                         &kp N    &to 0        &to 0      &kp B    &kp V                  &kp C                         &kp X                     &kp Z                      &kp LCTRL
-                                                                          &to 0                           &kp BSPC                      &kp RET  &kp SPACE    &kp SPACE  &kp RET  &kp BSPC               &to 0
+&kp ESC    &kp N0                             &kp N9                        &kp N8                              &kp N7                        &kp N6                           &kp N5   &kp N4                      &kp N3                        &kp N2                    &kp N1                     &kp ESC
+&kp TAB    &kp P                              &kp O                         &kp I                               &kp U                         &kp Y                            &kp T    &kp R                       &kp E                         &kp W                     &kp Q                      &kp TAB
+&kp LSHFT  &homerow_right LEFT_WIN SEMICOLON  &homerow_right RIGHT_ALT L    &homerow_right RIGHT_CONTROL K      &homerow_right RIGHT_SHIFT J  &kp H                            &kp G    &homerow_left LSHFT F       &homerow_left LEFT_CONTROL D  &homerow_left LEFT_ALT S  &homerow_left RIGHT_WIN A  &kp LSHFT
+&kp LCTRL  &homerow_right RIGHT_WIN FSLH      &homerow_right RIGHT_ALT DOT  &homerow_right RIGHT_CONTROL COMMA  &homerow_right RIGHT_SHIFT M  &kp N    &to 0        &to 0      &kp B    &homerow_left LEFT_SHIFT V  &homerow_left LEFT_CONTROL C  &homerow_left LEFT_ALT X  &homerow_left LEFT_WIN Z   &kp LCTRL
+                                                                            &to 0                               &kp BSPC                      &kp RET  &kp SPACE    &kp SPACE  &kp RET  &kp BSPC                    &to 0
             >;
         };
     };
