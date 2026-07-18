@@ -92,15 +92,6 @@
 
             tapping-term-ms = <1000>;
         };
-
-        layer_og_revert_og: layer_og_revert_og {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LAYER_OG_REVERT_OG";
-            #binding-cells = <0>;
-            bindings = <&mo 4>, <&mo 6>;
-
-            tapping-term-ms = <1000>;
-        };
     };
 
     macros {
@@ -230,11 +221,11 @@
 
         original_layer {
             bindings = <
-&to_default  &kp N1  &kp N2  &kp N3       &kp N4      &kp N5                                       &kp N6               &kp N7         &kp N8       &kp N9   &kp N0    &kp GRAVE
-&kp TAB      &kp Q   &kp W   &kp E        &kp R       &kp T                                        &kp Y                &kp U          &kp I        &kp O    &kp P     &kp MINUS
-&kp LSHFT    &kp A   &kp S   &kp D        &kp F       &kp G                                        &kp H                &kp J          &kp K        &kp L    &kp SEMI  &kp SQT
-&kp LCTRL    &kp Z   &kp X   &kp C        &kp V       &kp B                &kp DOT      &kp DOT    &kp N                &kp M          &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
-                             &to_default  &kp ESCAPE  &layer_og_revert_og  &kp SPACE    &kp SPACE  &layer_og_revert_og  &kp BACKSPACE  &to_default
+&to_default  &kp N1  &kp N2  &kp N3       &kp N4      &kp N5                          &kp N6  &kp N7         &kp N8       &kp N9   &kp N0    &kp GRAVE
+&kp TAB      &kp Q   &kp W   &kp E        &kp R       &kp T                           &kp Y   &kp U          &kp I        &kp O    &kp P     &kp MINUS
+&kp LSHFT    &kp A   &kp S   &kp D        &kp F       &kp G                           &kp H   &kp J          &kp K        &kp L    &kp SEMI  &kp SQT
+&kp LCTRL    &kp Z   &kp X   &kp C        &kp V       &kp B   &kp DOT      &kp DOT    &kp N   &kp M          &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
+                             &to_default  &kp ESCAPE  &mo 6   &kp SPACE    &kp SPACE  &mo 6   &kp BACKSPACE  &to_default
             >;
         };
 
