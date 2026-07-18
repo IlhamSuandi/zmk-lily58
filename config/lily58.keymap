@@ -74,6 +74,24 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53>;
             quick-tap-ms = <175>;
         };
+
+        layer_1_revert: layer_1_revert {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER_1_REVERT";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&mo 5>;
+
+            tapping-term-ms = <1000>;
+        };
+
+        layer_2_revert: layer_2_revert {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER_2_REVERT";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&mo 5>;
+
+            tapping-term-ms = <1000>;
+        };
     };
 
     macros {
@@ -128,11 +146,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC     &kp N1                    &kp N2                &kp N3                 &kp N4                  &kp N5                              &kp N6      &kp N7                        &kp N8                          &kp N9                 &kp N0                         &kp BACKSLASH
-&kp TAB     &kp Q                     &kp W                 &kp E                  &kp R                   &kp T                               &kp Y       &kp U                         &kp I                           &kp O                  &kp P                          &kp MINUS
-&kp LSHIFT  &homerow_left LEFT_WIN A  &homerow_left LALT S  &homerow_left LCTRL D  &homerow_left LSHIFT F  &kp G                               &kp H       &homerow_right RIGHT_SHIFT J  &homerow_right RIGHT_CONTROL K  &homerow_right RALT L  &homerow_right RIGHT_WIN SEMI  &kp SQT
-&kp LCTRL   &kp Z                     &kp X                 &kp C                  &kp V                   &kp B       &warpd_x     &warpd_v   &kp N       &kp M                         &kp COMMA                       &kp DOT                &kp FSLH                       &kp RSHFT
-                                                            &to 5                  &kp BACKSPACE           &layer_1_3  &kp SPACE    &kp ENTER  &layer_2_4  &kp BACKSPACE                 &warpd_v
+&kp ESC     &kp N1                    &kp N2                &kp N3                 &kp N4                  &kp N5                                   &kp N6           &kp N7                        &kp N8                          &kp N9                 &kp N0                         &kp BACKSLASH
+&kp TAB     &kp Q                     &kp W                 &kp E                  &kp R                   &kp T                                    &kp Y            &kp U                         &kp I                           &kp O                  &kp P                          &kp MINUS
+&kp LSHIFT  &homerow_left LEFT_WIN A  &homerow_left LALT S  &homerow_left LCTRL D  &homerow_left LSHIFT F  &kp G                                    &kp H            &homerow_right RIGHT_SHIFT J  &homerow_right RIGHT_CONTROL K  &homerow_right RALT L  &homerow_right RIGHT_WIN SEMI  &kp SQT
+&kp LCTRL   &kp Z                     &kp X                 &kp C                  &kp V                   &kp B            &warpd_x     &warpd_v   &kp N            &kp M                         &kp COMMA                       &kp DOT                &kp FSLH                       &kp RSHFT
+                                                            &tog 3                 &kp BACKSPACE           &layer_1_revert  &kp SPACE    &kp ENTER  &layer_2_revert  &kp BACKSPACE                 &tog 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -196,7 +214,7 @@
             >;
         };
 
-        revert-left-default {
+        revert-default {
             bindings = <
 &kp ESC    &kp N0                             &kp N9                      &kp N8                          &kp N7                        &kp N6                           &kp N5   &kp N4                 &kp N3                        &kp N2                    &kp N1                     &kp ESC
 &kp TAB    &kp P                              &kp O                       &kp I                           &kp U                         &kp Y                            &kp T    &kp R                  &kp E                         &kp W                     &kp Q                      &kp TAB
