@@ -92,6 +92,15 @@
 
             tapping-term-ms = <1000>;
         };
+
+        layer_og_revert_og: layer_og_revert_og {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER_OG_REVERT_OG";
+            #binding-cells = <0>;
+            bindings = <&mo 4>, <&mo 6>;
+
+            tapping-term-ms = <1000>;
+        };
     };
 
     macros {
@@ -123,6 +132,21 @@
             bindings = <&kp LA(LG(V)) &to 4>;
             label = "WARPD_V";
         };
+
+        warpd_x_revert: warpd_x_revert {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press>, <&kp LA(LG(X)) &to 6>;
+
+            label = "WARPD_X_REVERT";
+        };
+
+        warpd_v_revert: warpd_x_original {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LG(V)) &to 6>;
+            label = "WARPD_X_ORIGINAL";
+        };
     };
 
     combos {
@@ -146,11 +170,11 @@
             //                     | ALT  | GUI  | LOWER|  ENTER |  | SPACE | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC     &kp N1                    &kp N2                    &kp N3                        &kp N4                      &kp N5                                   &kp N6           &kp N7                        &kp N8                              &kp N9                           &kp N0                         &kp BACKSLASH
-&kp TAB     &kp Q                     &kp W                     &kp E                         &kp R                       &kp T                                    &kp Y            &kp U                         &kp I                               &kp O                            &kp P                          &kp MINUS
-&kp LSHIFT  &homerow_left LEFT_WIN A  &homerow_left LALT S      &homerow_left LCTRL D         &homerow_left LSHIFT F      &kp G                                    &kp H            &homerow_right RIGHT_SHIFT J  &homerow_right RIGHT_CONTROL K      &homerow_right RALT L            &homerow_right RIGHT_WIN SEMI  &kp SQT
-&kp LCTRL   &homerow_left LEFT_WIN Z  &homerow_left LEFT_ALT X  &homerow_left LEFT_CONTROL C  &homerow_left LEFT_SHIFT V  &kp B            &warpd_x     &warpd_v   &kp N            &homerow_right RIGHT_SHIFT M  &homerow_right RIGHT_CONTROL COMMA  &homerow_right RIGHT_ALT PERIOD  &homerow_right RIGHT_WIN FSLH  &kp RSHFT
-                                                                &mo 3                         &kp BACKSPACE               &layer_1_revert  &kp SPACE    &kp ENTER  &layer_2_revert  &kp BACKSPACE                 &mo 3
+&kp ESC     &kp N1                    &kp N2                    &kp N3                        &kp N4                      &kp N5                                                         &kp N6           &kp N7                        &kp N8                              &kp N9                           &kp N0                         &kp BACKSLASH
+&kp TAB     &kp Q                     &kp W                     &kp E                         &kp R                       &kp T                                                          &kp Y            &kp U                         &kp I                               &kp O                            &kp P                          &kp MINUS
+&kp LSHIFT  &homerow_left LEFT_WIN A  &homerow_left LALT S      &homerow_left LCTRL D         &homerow_left LSHIFT F      &kp G                                                          &kp H            &homerow_right RIGHT_SHIFT J  &homerow_right RIGHT_CONTROL K      &homerow_right RALT L            &homerow_right RIGHT_WIN SEMI  &kp SQT
+&kp LCTRL   &homerow_left LEFT_WIN Z  &homerow_left LEFT_ALT X  &homerow_left LEFT_CONTROL C  &homerow_left LEFT_SHIFT V  &kp B            &warpd_x                &warpd_v              &kp N            &homerow_right RIGHT_SHIFT M  &homerow_right RIGHT_CONTROL COMMA  &homerow_right RIGHT_ALT PERIOD  &homerow_right RIGHT_WIN FSLH  &kp RSHFT
+                                                                &mo 3                         &kp BACKSPACE               &layer_1_revert  &holdtap ENTER SPACE    &holdtap ENTER SPACE  &layer_2_revert  &kp BACKSPACE                 &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -169,7 +193,7 @@
 &trans  &kp UNDERSCORE  &kp EQUAL         &kp LEFT_BRACE        &kp RIGHT_BRACE        &trans                          &trans  &kp AMPERSAND    &kp ASTERISK  &kp TILDE  &kp PIPE       &trans
 &trans  &kp MINUS       &kp PLUS          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp ESCAPE                      &trans  &kp DOLLAR       &kp PERCENT   &kp CARET  &kp GRAVE      &trans
 &trans  &kp LESS_THAN   &kp GREATER_THAN  &kp LBKT              &kp RBKT               &trans      &trans    &trans    &trans  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &kp BACKSLASH  &trans
-                                          &trans                &trans                 &trans      &trans    &kp BSPC  &trans  &trans           &trans
+                                          &to_default           &trans                 &trans      &trans    &kp BSPC  &trans  &trans           &to_default
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -177,11 +201,11 @@
 
         number_layer {
             bindings = <
-&trans  &kp F1          &kp F2          &kp F3           &kp F4  &kp F5                    &kp F6  &kp F7        &kp F8  &kp F9  &kp F10  &trans
-&trans  &trans          &kp UP_ARROW    &trans           &trans  &trans                    &trans  &kp N7        &kp N8  &kp N9  &trans   &trans
-&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans                    &trans  &kp N4        &kp N5  &kp N6  &trans   &trans
-&trans  &trans          &trans          &trans           &trans  &trans  &trans    &trans  &trans  &kp NUMBER_1  &kp N2  &kp N3  &kp N0   &trans
-                                        &trans           &trans  &trans  &trans    &trans  &trans  &trans        &trans
+&trans  &kp F1          &kp F2          &kp F3           &kp F4  &kp F5                    &kp F6  &kp F7        &kp F8       &kp F9  &kp F10  &trans
+&trans  &trans          &kp UP_ARROW    &trans           &trans  &trans                    &trans  &kp N7        &kp N8       &kp N9  &trans   &trans
+&trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans                    &trans  &kp N4        &kp N5       &kp N6  &trans   &trans
+&trans  &trans          &trans          &trans           &trans  &trans  &trans    &trans  &trans  &kp NUMBER_1  &kp N2       &kp N3  &kp N0   &trans
+                                        &to_default      &trans  &trans  &trans    &trans  &trans  &trans        &to_default
             >;
         };
 
@@ -194,11 +218,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans  &trans  &trans          &trans            &trans      &trans                                                &kp INS  &kp C_AC_HOME    &kp DELETE  &kp PAGE_DOWN      &kp PAGE_UP  &kp PRINTSCREEN
-&trans  &trans  &trans          &trans            &trans      &trans                                                &trans   &trans           &trans      &trans             &trans       &trans
-&trans  &trans  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans                                                &trans   &kp C_VOLUME_UP  &kp K_MUTE  &kp C_VOLUME_DOWN  &trans       &trans
-&trans  &trans  &trans          &trans            &trans      &trans  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &trans   &trans           &trans      &trans             &trans       &trans
-                                &trans            &trans      &trans  &to 5                   &trans                &trans   &trans           &trans
+&trans  &trans  &trans          &trans            &trans      &trans                                                &kp INS  &kp C_AC_HOME    &kp DELETE   &kp PAGE_DOWN      &kp PAGE_UP  &kp PRINTSCREEN
+&trans  &trans  &trans          &trans            &trans      &trans                                                &trans   &trans           &trans       &trans             &trans       &trans
+&trans  &trans  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &trans                                                &trans   &kp C_VOLUME_UP  &kp K_MUTE   &kp C_VOLUME_DOWN  &trans       &trans
+&trans  &trans  &trans          &trans            &trans      &trans  &kp C_BRIGHTNESS_DEC    &kp C_BRIGHTNESS_INC  &trans   &trans           &trans       &trans             &trans       &trans
+                                &to_default       &trans      &trans  &to 5                   &trans                &trans   &trans           &to_default
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -206,21 +230,31 @@
 
         original_layer {
             bindings = <
-&to_default  &kp N1  &kp N2  &kp N3        &kp N4      &kp N5                                &kp N6       &kp N7         &kp N8      &kp N9   &kp N0    &kp GRAVE
-&kp TAB      &kp Q   &kp W   &kp E         &kp R       &kp T                                 &kp Y        &kp U          &kp I       &kp O    &kp P     &kp MINUS
-&kp LSHFT    &kp A   &kp S   &kp D         &kp F       &kp G                                 &kp H        &kp J          &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LCTRL    &kp Z   &kp X   &kp C         &kp V       &kp B        &kp SPACE    &kp DOT     &kp N        &kp M          &kp COMMA   &kp DOT  &kp FSLH  &kp RSHFT
-                             &kp LEFT_ALT  &kp ESCAPE  &to_default  &kp SPACE    &kp PERIOD  &to_default  &kp BACKSPACE  &kp DELETE
+&to_default  &kp N1  &kp N2  &kp N3       &kp N4      &kp N5                                       &kp N6               &kp N7         &kp N8       &kp N9   &kp N0    &kp GRAVE
+&kp TAB      &kp Q   &kp W   &kp E        &kp R       &kp T                                        &kp Y                &kp U          &kp I        &kp O    &kp P     &kp MINUS
+&kp LSHFT    &kp A   &kp S   &kp D        &kp F       &kp G                                        &kp H                &kp J          &kp K        &kp L    &kp SEMI  &kp SQT
+&kp LCTRL    &kp Z   &kp X   &kp C        &kp V       &kp B                &kp DOT      &kp DOT    &kp N                &kp M          &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
+                             &to_default  &kp ESCAPE  &layer_og_revert_og  &kp SPACE    &kp SPACE  &layer_og_revert_og  &kp BACKSPACE  &to_default
             >;
         };
 
         revert-default {
             bindings = <
-&kp ESC    &kp N0                             &kp N9                        &kp N8                              &kp N7                        &kp N6                          &kp N5  &kp N4                      &kp N3                        &kp N2                    &kp N1                     &kp ESC
-&kp TAB    &kp P                              &kp O                         &kp I                               &kp U                         &kp Y                           &kp T   &kp R                       &kp E                         &kp W                     &kp Q                      &kp TAB
-&kp LSHFT  &homerow_right LEFT_WIN SEMICOLON  &homerow_right RIGHT_ALT L    &homerow_right RIGHT_CONTROL K      &homerow_right RIGHT_SHIFT J  &kp H                           &kp G   &homerow_left LSHFT F       &homerow_left LEFT_CONTROL D  &homerow_left LEFT_ALT S  &homerow_left RIGHT_WIN A  &kp LSHFT
-&kp LCTRL  &homerow_right RIGHT_WIN FSLH      &homerow_right RIGHT_ALT DOT  &homerow_right RIGHT_CONTROL COMMA  &homerow_right RIGHT_SHIFT M  &kp N   &to 0        &to 0      &kp B   &homerow_left LEFT_SHIFT V  &homerow_left LEFT_CONTROL C  &homerow_left LEFT_ALT X  &homerow_left LEFT_WIN Z   &kp LCTRL
-                                                                            &trans                              &kp BSPC                      &trans  &kp SPACE    &kp SPACE  &trans  &kp BSPC                    &trans
+&kp ESC    &kp N0                             &kp N9                        &kp N8                              &kp N7                        &kp N6                                           &kp N5       &kp N4                      &kp N3                        &kp N2                    &kp N1                     &kp ESC
+&kp TAB    &kp P                              &kp O                         &kp I                               &kp U                         &kp Y                                            &kp T        &kp R                       &kp E                         &kp W                     &kp Q                      &kp TAB
+&kp LSHFT  &homerow_right LEFT_WIN SEMICOLON  &homerow_right RIGHT_ALT L    &homerow_right RIGHT_CONTROL K      &homerow_right RIGHT_SHIFT J  &kp H                                            &kp G        &homerow_left LSHFT F       &homerow_left LEFT_CONTROL D  &homerow_left LEFT_ALT S  &homerow_left RIGHT_WIN A  &kp LSHFT
+&kp LCTRL  &homerow_right RIGHT_WIN FSLH      &homerow_right RIGHT_ALT DOT  &homerow_right RIGHT_CONTROL COMMA  &homerow_right RIGHT_SHIFT M  &kp N        &warpd_x_revert    &warpd_x_revert  &kp B        &homerow_left LEFT_SHIFT V  &homerow_left LEFT_CONTROL C  &homerow_left LEFT_ALT X  &homerow_left LEFT_WIN Z   &kp LCTRL
+                                                                            &to_default                         &kp BSPC                      &to_default  &kp SPACE          &kp SPACE        &to_default  &kp BSPC                    &to_default
+            >;
+        };
+
+        revert_original {
+            bindings = <
+&kp ESC    &kp N0         &kp N9   &kp N8       &kp N7    &kp N6                               &kp N5       &kp N4    &kp N3       &kp N2  &kp N1  &kp ESC
+&kp TAB    &kp P          &kp O    &kp I        &kp U     &kp Y                                &kp T        &kp R     &kp E        &kp W   &kp Q   &kp TAB
+&kp LSHFT  &kp SEMICOLON  &kp L    &kp K        &kp J     &kp H                                &kp G        &kp F     &kp D        &kp S   &kp A   &kp LSHFT
+&kp LCTRL  &kp FSLH       &kp DOT  &kp COMMA    &kp M     &kp N        &to 0        &to 0      &kp B        &kp V     &kp C        &kp X   &kp Z   &kp LCTRL
+                                   &to_default  &kp BSPC  &to_default  &kp SPACE    &kp SPACE  &to_default  &kp BSPC  &to_default
             >;
         };
     };
