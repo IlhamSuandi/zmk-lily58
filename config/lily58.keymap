@@ -184,7 +184,7 @@
 &kp TAB      &kp Q   &kp W   &kp E        &kp R       &kp T                                                   &kp Y   &kp U          &kp I        &kp O    &kp P     &kp MINUS
 &kp LSHFT    &kp A   &kp S   &kp D        &kp F       &kp G                                                   &kp H   &kp J          &kp K        &kp L    &kp SEMI  &kp SQT
 &kp LCTRL    &kp Z   &kp X   &kp C        &kp V       &kp B   &kp F                    &kp SEMICOLON          &kp N   &kp M          &kp COMMA    &kp DOT  &kp FSLH  &kp RSHFT
-                             &to_default  &kp ESCAPE  &mo 0   &holdtap PERIOD SPACE    &holdtap PERIOD SPACE  &mo 3   &kp BACKSPACE  &to_default
+                             &to_default  &kp ESCAPE  &mo 2   &holdtap PERIOD SPACE    &holdtap PERIOD SPACE  &mo 3   &kp BACKSPACE  &to_default
             >;
         };
 
